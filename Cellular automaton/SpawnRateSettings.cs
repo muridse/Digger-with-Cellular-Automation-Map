@@ -10,5 +10,6 @@ namespace Digger.Cellular_automaton
     {
         public int GoldChance { get; set; }
         public int MonsterChance { get; set; }
+        public int SackChance { get; set; }
     }
 }

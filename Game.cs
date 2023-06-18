@@ -52,7 +52,8 @@ S TTST  TG
         public static SpawnRateSettings SpawnRateSettings = new SpawnRateSettings
         {
             GoldChance = 69,
-            MonsterChance = 88
+            MonsterChance = 88,
+            SackChance = 88,
         };
         public static void CreateMap()
         {

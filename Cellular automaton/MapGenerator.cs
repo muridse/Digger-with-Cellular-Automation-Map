@@ -117,7 +117,11 @@ namespace Digger.Cellular_automaton
 
                         if (count == 24) 
                         {
-                            if (rnd.Next(0, 100) > _spawnRateSettings.GoldChance) generation[i, j] = 2;
+                            if (rnd.Next(0, 100) > _spawnRateSettings.GoldChance) 
+                            {
+                                generation[i, j] = 2;
+                                if (rnd.Next(0, 100) > _spawnRateSettings.SackChance) generation[i - 1, j] = 4;
+                            }
                             else 
                             {
                                 if (rnd.Next(0, 100) > _spawnRateSettings.MonsterChance) generation[i, j] = 3;
@@ -148,6 +152,9 @@ namespace Digger.Cellular_automaton
                             break;
                         case 3:
                             map.Append('M');
+                            break;
+                        case 4:
+                            map.Append('S');
                             break;
                         default:
                             throw new Exception($"wrong code for map: {generation[i, j]}");
